@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +25,11 @@ Route::get('/todos', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/form-csrf', function () {
+    return view('test-csrf');
+});
+
+Route::post('/form-csrf', function () {
+    return 'Données soumises en toute sécurité.';
+})->middleware('check.useragent');
