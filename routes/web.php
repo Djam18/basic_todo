@@ -33,3 +33,6 @@ Route::get('/form-csrf', function () {
 Route::post('/form-csrf', function () {
     return 'Données soumises en toute sécurité.';
 })->middleware('check.useragent');
+
+Route::get('/contact', 'ContactController@create');
+Route::post('/contact', 'ContactController@store');
