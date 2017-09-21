@@ -58,5 +58,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'check.useragent' => \App\Http\Middleware\CheckUserAgent::class,
+        'check.age' => \App\Http\Middleware\CheckAge::class,
     ];
 }

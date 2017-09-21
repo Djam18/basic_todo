@@ -36,3 +36,6 @@ Route::post('/form-csrf', function () {
 
 Route::get('/contact', 'ContactController@create');
 Route::post('/contact', 'ContactController@store');
+Route::get('/restricted', function () {
+    return 'Bienvenue sur la page restreinte !';
+})->middleware('check.age');
