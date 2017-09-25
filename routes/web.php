@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,9 @@ Route::post('/contact', 'ContactController@store');
 Route::get('/restricted', function () {
     return 'Bienvenue sur la page restreinte !';
 })->middleware('check.age');
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+Route::post('/form', [FormController::class, 'handle']);
