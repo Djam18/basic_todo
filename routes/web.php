@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,5 @@ Route::get('/form', function () {
 });
 
 Route::post('/form', [FormController::class, 'handle']);
+
+Route::get('/products', [ProductController::class, 'index']);
