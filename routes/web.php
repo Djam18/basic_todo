@@ -49,3 +49,8 @@ Route::get('/form', function () {
 Route::post('/form', [FormController::class, 'handle']);
 
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::post('/form-submit', function (\Illuminate\Http\Request $request) {
+    $name = $request->input('name');
+    return "Nom soumis : " . $name;
+});
