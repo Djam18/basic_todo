@@ -54,3 +54,15 @@ Route::post('/form-submit', function (\Illuminate\Http\Request $request) {
     $name = $request->input('name');
     return "Nom soumis : " . $name;
 });
+Route::get('/test-1', function() {
+    return response()->json('test response');
+});
+
+Route::get('info-prive', function() {
+    return redirect()->route('login');
+});
+
+
+Route::get('simple-response', function() {
+    return 'Hello';
+});
