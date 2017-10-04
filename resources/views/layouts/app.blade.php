@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@yield('title', 'Laravel Basic')</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <title>BasicTodo - @yield('title')</title>
 </head>
 <body>
-    <div class="container mt-5">
+    <header>
+        @include('partials.nav')
+    </header>
+
+    <main>
         @yield('content')
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; {{ date('Y') }} BasicTodo</p>
+    </footer>
 </body>
 </html>
