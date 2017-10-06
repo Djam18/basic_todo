@@ -66,3 +66,7 @@ Route::get('info-prive', function() {
 Route::get('simple-response', function() {
     return 'Hello';
 });
+
+Route::get('/profile/{id}', function ($id) {
+    return 'Profil utilisateur : ' . $id;
+})->name('profile');

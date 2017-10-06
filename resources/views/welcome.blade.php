@@ -79,7 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    <a href="{{ route('profile', ['id' => 42]) }}">Voir le profil de l'utilisateur 42</a>
+                    <a href="{{ asset('css/app.css') }}" target="_blank" rel="noopener noreferrer">Voir app.css</a>
+                    <a href="{{ url('/profile/42') }}">Voir le profil de l'utilisateur 42</a>
                 </div>
 
                 <div class="links">
