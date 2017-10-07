@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProductController;
 
@@ -70,3 +71,17 @@ Route::get('simple-response', function() {
 Route::get('/profile/{id}', function ($id) {
     return 'Profil utilisateur : ' . $id;
 })->name('profile');
+
+Route::get('/store-session', function () {
+    Session::put('user', 'Djamal');
+    return 'Session enregistrée.';
+});
+
+Route::get('/get-session', function () {
+    return 'Utilisateur : ' . Session::get('user');
+});
+
+Route::get('/forget-session', function () {
+    Session::forget('user');
+    return 'Session supprimée.';
+});
