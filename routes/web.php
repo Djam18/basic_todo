@@ -85,3 +85,5 @@ Route::get('/forget-session', function () {
     Session::forget('user');
     return 'Session supprimée.';
 });
+
+Route::post('/contact', 'ContactController@submit');
