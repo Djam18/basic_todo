@@ -87,3 +87,7 @@ Route::get('/forget-session', function () {
 });
 
 Route::post('/contact', 'ContactController@submit');
+
+Route::get('/test-erreur', function () {
+    abort(404);
+});
