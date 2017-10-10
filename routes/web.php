@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,4 +91,11 @@ Route::post('/contact', 'ContactController@submit');
 
 Route::get('/test-erreur', function () {
     abort(404);
+});
+
+Route::get('/test-log', function () {
+    Log::info('Visite de la page test-log à ' . now());
+    Log::warning('Ceci est un avertissement pour test');
+    Log::error('Erreur simulée pour démonstration');
+    return 'Logs générés !';
 });
