@@ -15,7 +15,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+            // Exemple : partager une variable globale à toutes les vues
+        view()->share('year', date('Y'));
     }
 
     /**
