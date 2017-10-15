@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Log;
+use App\Contracts\BillingInterface;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,4 +99,8 @@ Route::get('/test-log', function () {
     Log::warning('Ceci est un avertissement pour test');
     Log::error('Erreur simulée pour démonstration');
     return 'Logs générés !';
+});
+
+Route::get('/test-billing', function (BillingInterface $billing) {
+    return $billing->charge(5000);
 });
