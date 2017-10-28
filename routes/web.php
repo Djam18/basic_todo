@@ -104,3 +104,11 @@ Route::get('/test-log', function () {
 Route::get('/test-billing', function (BillingInterface $billing) {
     return $billing->charge(5000);
 });
+
+// routes/web.php
+Route::get('/facade-exemple', function () {
+    \Illuminate\Support\Facades\Cache::put('visite', now(), 5);
+    \Illuminate\Support\Facades\Log::info('Page vue à ' . now());
+    view()->share('year', date('Y'));
+    return view('facade');
+});
