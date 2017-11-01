@@ -116,3 +116,7 @@ Route::get('/facade-exemple', function () {
 
 Route::get('/test-queue', 'TestQueueController@trigger');
 Route::post('upload-cv', 'ResumeController@uploadCV')->name('add.resume');
+
+Route::get('/helpers/array', 'HelperController@arrayHelpers');
+Route::get('/helpers/str', 'HelperController@stringHelpers');
+Route::get('/helpers/debug', 'HelperController@debugHelpers');
