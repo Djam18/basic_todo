@@ -20,15 +20,4 @@ class SendWelcomeEmail
             Log::info('Email de bienvenue envoyé à : ' . $event->user->email);
         }
     }
-
-    /**
-     * Handle the event.
-     *
-     * @param  UserRegistered  $event
-     * @return void
-     */
-    public function handle(UserRegistered $event)
-    {
-        //
-    }
 }
