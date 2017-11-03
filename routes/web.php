@@ -120,3 +120,4 @@ Route::post('upload-cv', 'ResumeController@uploadCV')->name('add.resume');
 Route::get('/helpers/array', 'HelperController@arrayHelpers');
 Route::get('/helpers/str', 'HelperController@stringHelpers');
 Route::get('/helpers/debug', 'HelperController@debugHelpers');
+Route::get('/posts/{post}/edit', 'PostController@update');
