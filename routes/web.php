@@ -112,3 +112,5 @@ Route::get('/facade-exemple', function () {
     view()->share('year', date('Y'));
     return view('facade');
 });
+
+Route::get('/test-queue', 'TestQueueController@trigger');
