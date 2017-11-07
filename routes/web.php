@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Log;
 use App\Contracts\BillingInterface;
+use App\Http\Controllers\ResumeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,3 +115,4 @@ Route::get('/facade-exemple', function () {
 });
 
 Route::get('/test-queue', 'TestQueueController@trigger');
+Route::post('upload-cv', 'ResumeController@uploadCV')->name('add.resume');
