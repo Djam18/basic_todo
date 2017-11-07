@@ -122,3 +122,5 @@ Route::get('/helpers/str', 'HelperController@stringHelpers');
 Route::get('/helpers/debug', 'HelperController@debugHelpers');
 Route::get('/posts/{post}/edit', 'PostController@update');
 Route::resource('users', 'UserController');
+// routes/web.php
+Route::get('/query-demo', 'QueryBuilderDemoController@showActiveUsers');
