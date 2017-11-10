@@ -124,3 +124,4 @@ Route::get('/posts/{post}/edit', 'PostController@update');
 Route::resource('users', 'UserController');
 // routes/web.php
 Route::get('/query-demo', 'QueryBuilderDemoController@showActiveUsers');
+Route::get('/transaction-test', 'TransactionDemoController@createUserWithProfile');
