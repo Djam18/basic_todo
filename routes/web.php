@@ -125,3 +125,4 @@ Route::resource('users', 'UserController');
 // routes/web.php
 Route::get('/query-demo', 'QueryBuilderDemoController@showActiveUsers');
 Route::get('/transaction-test', 'TransactionDemoController@createUserWithProfile');
+Route::get('/users', 'UserListController@index');
