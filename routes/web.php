@@ -126,3 +126,14 @@ Route::resource('users', 'UserController');
 Route::get('/query-demo', 'QueryBuilderDemoController@showActiveUsers');
 Route::get('/transaction-test', 'TransactionDemoController@createUserWithProfile');
 Route::get('/users', 'UserListController@index');
+Route::get('/user/{id}/profile', function ($id) {
+    return User::find($id)->profile;
+});
+
+Route::get('/user/{id}/posts', function ($id) {
+    return User::find($id)->posts;
+});
+
+Route::get('/post/{id}/tags', function ($id) {
+    return Post::find($id)->tags;
+});
