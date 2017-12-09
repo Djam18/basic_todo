@@ -1,13 +1,17 @@
 <?php
 
+use App\Post;
+use App\Video;
+use App\Contracts\BillingInterface;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\FormController;
-use App\Http\Controllers\ProductController;
-use Illuminate\Support\Facades\Log;
-use App\Contracts\BillingInterface;
 use App\Http\Controllers\ResumeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,4 +140,12 @@ Route::get('/user/{id}/posts', function ($id) {
 
 Route::get('/post/{id}/tags', function ($id) {
     return Post::find($id)->tags;
+});
+
+Route::get('/post/{id}/comments', function ($id) {
+    return Post::find($id)->comments;
+});
+
+Route::get('/video/{id}/comments', function ($id) {
+    return Video::find($id)->comments;
 });
